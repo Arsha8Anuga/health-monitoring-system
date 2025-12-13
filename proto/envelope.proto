@@ -1,0 +1,16 @@
+import "handshake.proto";
+import "telemetry.proto";
+import "error.proto";
+import "ping_n_ack.proto";
+
+package hms;
+
+message Envelope {
+    oneof payload {
+        Handshake handshake = 1;
+        Ping ping = 2;
+        Ack ack = 3;
+        Telemetry telemetry = 4;
+        Error error = 5;
+    }
+}

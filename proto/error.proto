@@ -1,0 +1,6 @@
+package hms;
+
+message Error {
+    int32 code = 1;
+    string message = 2;
+}

@@ -1,0 +1,7 @@
+package hms;
+
+message Handshake {
+    string agent_id = 1;
+    string agent_ip = 2;
+    string agent_version = 3;
+}

@@ -1,0 +1,8 @@
+package hms;
+
+message Telemetry {
+    int64 timestamp = 1;
+    string cpu_name = 2;
+    float cpu_usage = 3;
+    string ram_usage = 4;
+}

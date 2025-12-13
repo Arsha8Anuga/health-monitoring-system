@@ -1,0 +1,9 @@
+package hms;
+
+message Ping {
+    int64 timestamps = 1; 
+}
+
+message Ack {
+    int64 timestamps = 1;
+}
