@@ -1,3 +1,5 @@
+syntax = "proto3";
+
 package hms;
 
 message Error {

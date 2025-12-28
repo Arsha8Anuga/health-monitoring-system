@@ -1,9 +1,12 @@
+syntax = "proto3";
+
+package hms;
+
 import "handshake.proto";
 import "telemetry.proto";
 import "error.proto";
 import "ping_n_ack.proto";
 
-package hms;
 
 message Envelope {
     oneof payload {
