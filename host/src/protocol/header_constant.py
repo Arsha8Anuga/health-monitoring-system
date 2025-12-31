@@ -1,6 +1,5 @@
 from enum import Enum, IntFlag
 
-
 MAGIC_BYTES = b'\x43\x90'
 VERSION  = 1
 PAYLOAD_LENGTH = 4
