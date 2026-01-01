@@ -1,5 +1,5 @@
 from header import Header
-from ...lib import envelope_pb2
+from host.lib.envelope_pb2 import Envelope
 from google.protobuf.message import DecodeError
 
 class StreamParser :
@@ -30,7 +30,7 @@ class StreamParser :
             del self.buffer[:total_len]
 
             try :
-                env = envelope_pb2.Envelope()
+                env = Envelope()
                 env.ParseFromString(payload)
 
             except  DecodeError as e:

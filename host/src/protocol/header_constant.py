@@ -11,6 +11,14 @@ class MessageType(Enum) :
     TELEMETRY = 4
     ERROR = 5
 
+FIELD_TYPE = {
+    "handshake" : MessageType.HANDSHAKE,
+    "ping" : MessageType.PING,
+    "ack" : MessageType.ACK,
+    "telemetry" : MessageType.TELEMETRY,
+    "error" : MessageType.ERROR 
+}
+
 class HeaderFlags(IntFlag) : 
     NONE = 0
     URGENT = 1 << 0
