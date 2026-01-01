@@ -1,5 +1,6 @@
 from header import Header
 from lib.envelope_pb2 import Envelope
+from packet import Packet
 from google.protobuf.message import DecodeError
 
 class StreamParser :
@@ -35,8 +36,10 @@ class StreamParser :
 
             except  DecodeError as e:
                 raise ValueError("Invalid Payload") from e
+            
+            pkt = Packet(header = header, payload = env)
                 
-            messages.append(env)
+            messages.append(pkt)
         
         return messages
     
