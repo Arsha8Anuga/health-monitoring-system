@@ -1,5 +1,5 @@
 from header import Header
-from host.lib.envelope_pb2 import Envelope
+from lib.envelope_pb2 import Envelope
 from google.protobuf.message import DecodeError
 
 class StreamParser :

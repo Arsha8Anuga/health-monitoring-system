@@ -1,6 +1,6 @@
 from header import Header
 from header_constant import HeaderFlags, FIELD_TYPE
-from host.lib.envelope_pb2 import Envelope
+from lib.envelope_pb2 import Envelope
 
 def encode_message (envelope : Envelope , flags : HeaderFlags) :
 
