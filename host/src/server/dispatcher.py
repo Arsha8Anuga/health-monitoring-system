@@ -1,9 +1,20 @@
-from lib.envelope_pb2 import Envelope
 from src.handlers import handshake, ping, ack, telemetry, error
+from src.protocol.header_constant import FIELD_TYPE, HeaderFlags
+from src.protocol.packet import Packet
 
 class Dispatcher : 
-    def dispatch(self, session, envelope : Envelope) : 
+    def dispatch(self, session, pkt: Packet) :
+
+        envelope = pkt.payload
+        header = pkt.header
+
         payload_type = envelope.WhichOneOf("payload")
+
+        if FIELD_TYPE[payload_type] !=  header.msg_type : 
+            raise ValueError("Protocol Violation : header and payload type mismatch.")
+        
+        if header.flags & HeaderFlags.URGENT : 
+            pass
 
         if payload_type == "handshake":
             handshake.handle(session, envelope.handshake)
